@@ -15,21 +15,18 @@ String board = "ARDUINO_AVR_UNO";
 String board = "ARDUINO_AVR_MEGA2560";
 #elif __AVR_ATmega1284P__
 String board = "__AVR_ATmega1284P__";
+#elif __AVR_ATmega1284__
+String board = "__AVR_ATmega1284__";
 #else
 String board = "XCIS Pro or Pro mini";
 #endif
 
-//Device device; 
-
-// Analog PIN for Reset switch
-#define RESET_SW A3
 
 void setup()
 {
    Serial.begin(115200);
    //device.initialise(board);
    Device::Instance()->initialise(board);
-   pinMode(RESET_SW,INPUT); // A3 Reset Switch
 }
 void loop()
 {  
